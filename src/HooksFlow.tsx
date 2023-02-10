@@ -108,7 +108,7 @@ function HooksFlow() {
 					border: 'solid',
 				}}
 			>
-				{showChild ? <Child /> : null}
+				{showChild ? <Child/> : null}
 			</div>
 		</>
 	)

@@ -36,12 +36,35 @@ import HooksFlow from "./HooksFlow";
 // import './assets/css/responsive.css'
 // import './assets/css/style.css'
 
-function App() {
-	const [isOpen, setIsOpen] = useState(false)
+function App({name = 'Andrii'}) {
+	
+	const [isOpen, setIsOpen] = useState(false);
+	const [value, setValue] = useState(name);
+	
+	
+	// console.log('value:', value);
+	// const [user, setUser] = useState(null)
+	// const [data, setData] = useReducer({})
+	//
+	//
+	// useEffect(() => {
+	// 	const data = fetchData()
+	//
+	// 	// setValue(data.user.name)
+	// 	//
+	// 	// let tiem = setTimeout(adsad)
+	// 	//
+	// 	// return () => clearTimeout(tiem)
+	//
+	// }, [name])
+	
+	
+	// const onOpenNavBar = () => setIsOpen(true)
+	// const onCloseNavBar = () => setIsOpen(false)
 	
 	return (
 		<>
-			<HooksFlow />
+			<HooksFlow/>
 			{/* banner bg main start */}
 			<div className="banner_bg_main">
 				{/* header top section start */}
@@ -94,7 +117,7 @@ function App() {
 						<div className="containt_main">
 							<div id="mySidenav" className="sidenav"
 							     style={{width: isOpen ? "250px" : "0"}}>
-								<a href="https://google.com" className="closebtn" onClick={() => setIsOpen(false)}>
+								<a className="closebtn" onClick={() => setIsOpen(false)}>
 									×
 								</a>
 								<a href="#">Home</a>
@@ -135,6 +158,8 @@ function App() {
 										type="text"
 										className="form-control"
 										placeholder="Search this blog"
+										onChange={(e) => setValue(e.target.value)}
+										value={value}
 									/>
 									<div className="input-group-append">
 										<button
@@ -274,13 +299,13 @@ function App() {
 								<div className="fashion_section_2">
 									<div className="row">
 										<div className="col-lg-4 col-sm-4">
-											<CardWithModuleCss />
+											<CardWithModuleCss/>
 										</div>
 										<div className="col-lg-4 col-sm-4">
-											<CardWithStyledComponent />
+											<CardWithStyledComponent/>
 										</div>
 										<div className="col-lg-4 col-sm-4">
-											<CardWithRegularCss />
+											<CardWithRegularCss/>
 										</div>
 									</div>
 								</div>
